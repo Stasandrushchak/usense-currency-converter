@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Currency } from "./types/currency";
 import { Loader } from "./components/Loader/Loader";
+import 'bulma/css/bulma.css';
 
 export const App: React.FC = () => {
   const [eurRate, setEurRate] = useState<number | null>(null);
