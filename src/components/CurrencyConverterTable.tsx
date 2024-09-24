@@ -1,4 +1,5 @@
 import React from "react";
+import { CurrencySelect } from "./Select";
 
 type CurrencyConverterTableProps = {
   initialCurrency: string;
@@ -24,16 +25,10 @@ export const CurrencyConverterTable: React.FC<CurrencyConverterTableProps> = ({
       <tbody>
         <tr>
           <td>
-            <div className="select is-medium is-warning is-hovered">
-              <select
-                onChange={(event) => setInitialCurrency(event.target.value)}
-                value={initialCurrency}
-              >
-                <option value="UAH">UAH</option>
-                <option value="USD">USD</option>
-                <option value="EUR">EUR</option>
-              </select>
-            </div>
+            <CurrencySelect
+              selectedCurrency={initialCurrency}
+              onChange={setInitialCurrency}
+            />
           </td>
           <td>
             <p className="control">
@@ -56,16 +51,10 @@ export const CurrencyConverterTable: React.FC<CurrencyConverterTableProps> = ({
         </tr>
         <tr>
           <td>
-            <div className="select is-medium is-warning is-hovered">
-              <select
-                onChange={(event) => setToCurrency(event.target.value)}
-                value={toCurrency}
-              >
-                <option value="UAH">UAH</option>
-                <option value="USD">USD</option>
-                <option value="EUR">EUR</option>
-              </select>
-            </div>
+            <CurrencySelect
+              selectedCurrency={toCurrency}
+              onChange={setToCurrency}
+            />
           </td>
           <td>
             <p className="control">
